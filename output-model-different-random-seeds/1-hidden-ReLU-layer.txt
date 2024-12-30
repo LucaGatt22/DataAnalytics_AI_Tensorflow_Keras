@@ -1,0 +1,1735 @@
+Number of rows: 7043
+Column: customerID 	 object
+['7590-VHVEG' '5575-GNVDE' '3668-QPYBK' ... '4801-JZAZL' '8361-LTMKD'
+ '3186-AJIEK']
+
+Column: gender 	 object
+['Female' 'Male']
+
+Column: SeniorCitizen 	 int64
+[0 1]
+
+Column: Partner 	 object
+['Yes' 'No']
+
+Column: Dependents 	 object
+['No' 'Yes']
+
+Column: tenure 	 int64
+[ 1 34  2 45  8 22 10 28 62 13 16 58 49 25 69 52 71 21 12 30 47 72 17 27
+  5 46 11 70 63 43 15 60 18 66  9  3 31 50 64 56  7 42 35 48 29 65 38 68
+ 32 55 37 36 41  6  4 33 67 23 57 61 14 20 53 40 59 24 44 19 54 51 26  0
+ 39]
+
+Column: PhoneService 	 object
+['No' 'Yes']
+...
+
+Column: Churn 	 object
+['No' 'Yes']
+
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+['OnlineSecurity', 'gender', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'MultipleLines', 'InternetService', 'PaymentMethod', 'Dependents', 'StreamingTV', 'PhoneService', 'DeviceProtection', 'Partner', 'TechSupport', 'OnlineBackup']
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7043 entries, 0 to 7042
+Data columns (total 21 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   customerID        7043 non-null   object 
+ 1   gender            7043 non-null   object 
+ 2   SeniorCitizen     7043 non-null   int64  
+ 3   Partner           7043 non-null   object 
+ 4   Dependents        7043 non-null   object 
+ 5   tenure            7043 non-null   int64  
+ 6   PhoneService      7043 non-null   object 
+ 7   MultipleLines     7043 non-null   object 
+ 8   InternetService   7043 non-null   object 
+ 9   OnlineSecurity    7043 non-null   object 
+ 10  OnlineBackup      7043 non-null   object 
+ 11  DeviceProtection  7043 non-null   object 
+ 12  TechSupport       7043 non-null   object 
+ 13  StreamingTV       7043 non-null   object 
+ 14  StreamingMovies   7043 non-null   object 
+ 15  Contract          7043 non-null   object 
+ 16  PaperlessBilling  7043 non-null   object 
+ 17  PaymentMethod     7043 non-null   object 
+ 18  MonthlyCharges    7043 non-null   float64
+ 19  TotalCharges      7043 non-null   object 
+ 20  Churn             7043 non-null   object 
+dtypes: float64(1), int64(2), object(18)
+memory usage: 1.1+ MB
+customerID          0
+gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+TotalCharges        0
+Churn               0
+dtype: int64
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           tenure  MonthlyCharges
+Mean    32.371149       64.761692
+Median  29.000000       70.350000
+Mode     1.000000       20.050000
+
+
+numRowsDropped:  11
+
+Total count: 7032
+Count of 1: 1869
+Count of 0: 5163
+Percentage of 1: 26.58%
+Percentage of 0: 73.42%
+Churn columns statistics shown in a table
+
+Total count: 7032
+Index(['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents',
+       'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
+       'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+       'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
+       'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn'],
+      dtype='object')
+   customerID  gender  SeniorCitizen Partner Dependents  tenure PhoneService  \
+0  7590-VHVEG  Female              0     Yes         No       1           No   
+1  5575-GNVDE    Male              0      No         No      34          Yes   
+2  3668-QPYBK    Male              0      No         No       2          Yes   
+3  7795-CFOCW    Male              0      No         No      45           No   
+4  9237-HQITU  Female              0      No         No       2          Yes   
+
+      MultipleLines InternetService OnlineSecurity  ... DeviceProtection  \
+0  No phone service             DSL             No  ...               No   
+1                No             DSL            Yes  ...              Yes   
+2                No             DSL            Yes  ...               No   
+3  No phone service             DSL            Yes  ...              Yes   
+4                No     Fiber optic             No  ...               No   
+
+  TechSupport StreamingTV StreamingMovies        Contract PaperlessBilling  \
+0          No          No              No  Month-to-month              Yes   
+1          No          No              No        One year               No   
+2          No          No              No  Month-to-month              Yes   
+3         Yes          No              No        One year               No   
+...
+3  Bank transfer (automatic)          42.30       1840.75      0  
+4           Electronic check          70.70        151.65      1  
+
+[5 rows x 21 columns]
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+Columns list:
+['Value', 'Count', 'Percentage']
+DataFrame columns:
+Index(['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents',
+       'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
+       'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+       'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
+       'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn'],
+      dtype='object')
+Missing columns: ['Value', 'Count', 'Percentage']
+(Gender) Data Frame columns: Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'TotalCharges', 'Churn'],
+      dtype='object')
+Yes/No Data Frame columns: Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'TotalCharges', 'Churn'],
+      dtype='object')
+   gender  SeniorCitizen  Partner  Dependents  tenure  PhoneService  \
+0       1              0        1           0       1             0   
+1       0              0        0           0      34             1   
+2       0              0        0           0       2             1   
+3       0              0        0           0      45             0   
+4       1              0        0           0       2             1   
+
+  MultipleLines InternetService OnlineSecurity OnlineBackup DeviceProtection  \
+0     [1, 0, 0]       [1, 0, 0]      [1, 0, 0]    [1, 0, 0]        [1, 0, 0]   
+1     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [0, 1, 0]   
+2     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [1, 0, 0]        [1, 0, 0]   
+3     [1, 0, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [0, 1, 0]   
+4     [0, 1, 0]       [0, 1, 0]      [1, 0, 0]    [0, 1, 0]        [1, 0, 0]   
+...
+1  [0, 1, 0, 0]           56.95       1889.50      0  
+2  [0, 1, 0, 0]           53.85        108.15      1  
+3  [0, 0, 1, 0]           42.30       1840.75      0  
+4  [1, 0, 0, 0]           70.70        151.65      1  
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+gender                int64
+SeniorCitizen         int64
+Partner               int64
+Dependents            int64
+tenure                int64
+PhoneService          int64
+MultipleLines        object
+InternetService      object
+OnlineSecurity       object
+OnlineBackup         object
+DeviceProtection     object
+TechSupport          object
+StreamingTV          object
+StreamingMovies      object
+Contract             object
+PaperlessBilling      int64
+PaymentMethod        object
+MonthlyCharges      float64
+TotalCharges        float64
+Churn                 int64
+dtype: object
+
+Non-numeric columns:
+Index(['MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup',
+       'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies',
+...
+7041  [0, 1, 0, 0]  
+7042  [0, 0, 1, 0]  
+
+[7032 rows x 10 columns]
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+   gender  SeniorCitizen  Partner  Dependents  tenure  PhoneService  \
+0       1              0        1           0       1             0   
+1       0              0        0           0      34             1   
+2       0              0        0           0       2             1   
+3       0              0        0           0      45             0   
+4       1              0        0           0       2             1   
+5       1              0        0           0       8             1   
+6       0              0        0           1      22             1   
+7       1              0        0           0      10             0   
+8       1              0        1           0      28             1   
+9       0              0        0           1      62             1   
+
+  MultipleLines InternetService OnlineSecurity OnlineBackup DeviceProtection  \
+0     [1, 0, 0]       [1, 0, 0]      [1, 0, 0]    [1, 0, 0]        [1, 0, 0]   
+1     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [0, 1, 0]   
+2     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [1, 0, 0]        [1, 0, 0]   
+3     [1, 0, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [0, 1, 0]   
+4     [0, 1, 0]       [0, 1, 0]      [1, 0, 0]    [0, 1, 0]        [1, 0, 0]   
+5     [0, 0, 1]       [0, 1, 0]      [1, 0, 0]    [0, 1, 0]        [0, 1, 0]   
+6     [0, 0, 1]       [0, 1, 0]      [1, 0, 0]    [1, 0, 0]        [1, 0, 0]   
+7     [1, 0, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [1, 0, 0]   
+8     [0, 0, 1]       [0, 1, 0]      [1, 0, 0]    [0, 1, 0]        [0, 1, 0]   
+9     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [1, 0, 0]        [1, 0, 0]   
+
+  TechSupport StreamingTV StreamingMovies   Contract  PaperlessBilling  \
+...
+6  [0, 0, 0, 1]           89.10       1949.40      0  
+7  [0, 1, 0, 0]           29.75        301.90      0  
+8  [1, 0, 0, 0]          104.80       3046.05      1  
+9  [0, 0, 1, 0]           56.15       3487.95      0  
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+len(X):  7032
+len(y):  7032
+   gender  SeniorCitizen  Partner  Dependents  tenure  PhoneService  \
+0       1              0        1           0       1             0   
+1       0              0        0           0      34             1   
+2       0              0        0           0       2             1   
+3       0              0        0           0      45             0   
+4       1              0        0           0       2             1   
+
+  MultipleLines InternetService OnlineSecurity OnlineBackup DeviceProtection  \
+0     [1, 0, 0]       [1, 0, 0]      [1, 0, 0]    [1, 0, 0]        [1, 0, 0]   
+1     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [0, 1, 0]   
+2     [0, 1, 0]       [1, 0, 0]      [0, 1, 0]    [1, 0, 0]        [1, 0, 0]   
+3     [1, 0, 0]       [1, 0, 0]      [0, 1, 0]    [0, 1, 0]        [0, 1, 0]   
+4     [0, 1, 0]       [0, 1, 0]      [1, 0, 0]    [0, 1, 0]        [1, 0, 0]   
+
+  TechSupport StreamingTV StreamingMovies   Contract  PaperlessBilling  \
+0   [1, 0, 0]   [1, 0, 0]       [1, 0, 0]  [1, 0, 0]                 1   
+1   [1, 0, 0]   [1, 0, 0]       [1, 0, 0]  [0, 1, 0]                 0   
+2   [1, 0, 0]   [1, 0, 0]       [1, 0, 0]  [1, 0, 0]                 1   
+3   [0, 1, 0]   [1, 0, 0]       [1, 0, 0]  [0, 1, 0]                 0   
+4   [1, 0, 0]   [1, 0, 0]       [1, 0, 0]  [1, 0, 0]                 1   
+
+  PaymentMethod  MonthlyCharges  TotalCharges  Churn  
+0  [1, 0, 0, 0]           29.85         29.85      0  
+1  [0, 1, 0, 0]           56.95       1889.50      0  
+2  [0, 1, 0, 0]           53.85        108.15      1  
+...
+ [0 1 1 ... list([0, 1, 0, 0]) 74.4 306.6]
+ [0 0 0 ... list([0, 0, 1, 0]) 105.65 6844.5]]
+
+[0 0 1 ... 0 1 0]
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+X
+ [[1 0 1 ... list([1, 0, 0, 0]) 29.85 29.85]
+ [0 0 0 ... list([0, 1, 0, 0]) 56.95 1889.5]
+ [0 0 0 ... list([0, 1, 0, 0]) 53.85 108.15]
+ ...
+ [1 0 1 ... list([1, 0, 0, 0]) 29.6 346.45]
+ [0 1 1 ... list([0, 1, 0, 0]) 74.4 306.6]
+ [0 0 0 ... list([0, 0, 1, 0]) 105.65 6844.5]]
+object
+
+flattened_rows
+ [[1.0000e+00 0.0000e+00 1.0000e+00 ... 0.0000e+00 2.9850e+01 2.9850e+01]
+ [0.0000e+00 0.0000e+00 0.0000e+00 ... 0.0000e+00 5.6950e+01 1.8895e+03]
+ [0.0000e+00 0.0000e+00 0.0000e+00 ... 0.0000e+00 5.3850e+01 1.0815e+02]
+ ...
+ [1.0000e+00 0.0000e+00 1.0000e+00 ... 0.0000e+00 2.9600e+01 3.4645e+02]
+ [0.0000e+00 1.0000e+00 1.0000e+00 ... 0.0000e+00 7.4400e+01 3.0660e+02]
+ [0.0000e+00 0.0000e+00 0.0000e+00 ... 0.0000e+00 1.0565e+02 6.8445e+03]]
+float64
+False
+X_train:
+[[1.00000e+00 0.00000e+00 1.00000e+00 ... 1.00000e+00 6.04000e+01
+  2.64055e+03]
+ [0.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 9.12500e+01
+  6.58960e+03]
+ [1.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 1.92500e+01
+  1.80300e+02]
+ ...
+ [0.00000e+00 0.00000e+00 0.00000e+00 ... 0.00000e+00 5.11500e+01
+  1.27570e+03]
+ [0.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 1.96000e+01
+  1.38745e+03]
+ [1.00000e+00 0.00000e+00 0.00000e+00 ... 0.00000e+00 8.33000e+01
+  8.03300e+02]]
+X_test:
+[[0.00000e+00 0.00000e+00 0.00000e+00 ... 0.00000e+00 8.01000e+01
+  3.98550e+02]
+ [0.00000e+00 0.00000e+00 0.00000e+00 ... 1.00000e+00 1.11600e+02
+  6.87605e+03]
+ [0.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 7.06500e+01
+  7.06500e+01]
+ ...
+ [1.00000e+00 0.00000e+00 0.00000e+00 ... 0.00000e+00 1.05550e+02
+  5.68225e+03]
+ [0.00000e+00 0.00000e+00 0.00000e+00 ... 1.00000e+00 2.52500e+01
+...
+y_train:
+[0 0 1 ... 0 0 1]
+y_test:
+[0 1 1 ... 0 0 0]
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+X_train[0].shape:  (40,)
+X_test[0].shape:  (40,)
+y_train.shape:  (5625,)
+y_test.shape:  (1407,)
+X_train.shape:  (5625, 40)
+X_test.shape:  (1407, 40)
+X_train:
+ [[1.00000e+00 0.00000e+00 1.00000e+00 ... 1.00000e+00 6.04000e+01
+  2.64055e+03]
+ [0.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 9.12500e+01
+  6.58960e+03]
+ [1.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 1.92500e+01
+  1.80300e+02]
+ ...
+ [0.00000e+00 0.00000e+00 0.00000e+00 ... 0.00000e+00 5.11500e+01
+  1.27570e+03]
+ [0.00000e+00 0.00000e+00 1.00000e+00 ... 0.00000e+00 1.96000e+01
+  1.38745e+03]
+ [1.00000e+00 0.00000e+00 0.00000e+00 ... 0.00000e+00 8.33000e+01
+  8.03300e+02]]
+Number of input neurons:  40
+Train the model
+Epoch 1/5
+5625/5625 ━━━━━━━━━━━━━━━━━━━━ 5s 829us/step - accuracy: 0.7583 - loss: 0.5359
+Epoch 2/5
+5625/5625 ━━━━━━━━━━━━━━━━━━━━ 5s 840us/step - accuracy: 0.7622 - loss: 0.5261
+Epoch 3/5
+5625/5625 ━━━━━━━━━━━━━━━━━━━━ 5s 838us/step - accuracy: 0.7723 - loss: 0.5186
+Epoch 4/5
+5625/5625 ━━━━━━━━━━━━━━━━━━━━ 5s 846us/step - accuracy: 0.7684 - loss: 0.5158
+Epoch 5/5
+5625/5625 ━━━━━━━━━━━━━━━━━━━━ 5s 831us/step - accuracy: 0.7709 - loss: 0.5177
+
+Test the model
+1407/1407 ━━━━━━━━━━━━━━━━━━━━ 1s 755us/step - accuracy: 0.7577 - loss: 0.4993
+Test Loss: 0.4975
+Test Accuracy: 0.7626
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 118ms/step - accuracy: 0.7989 - loss: 0.4289
+Test Loss: 0.4289
+Test Accuracy: 0.7989
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 113ms/step - accuracy: 0.7925 - loss: 0.4713
+Test Loss: 0.4713
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 110ms/step - accuracy: 0.8024 - loss: 0.4314
+Test Loss: 0.4314
+Test Accuracy: 0.8024
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7903 - loss: 0.4376
+Test Loss: 0.4376
+Test Accuracy: 0.7903
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7946 - loss: 0.4930
+Test Loss: 0.4930
+Test Accuracy: 0.7946
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7982 - loss: 0.4410
+Test Loss: 0.4410
+Test Accuracy: 0.7982
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7946 - loss: 0.5765
+Test Loss: 0.5765
+Test Accuracy: 0.7946
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7932 - loss: 0.8267
+Test Loss: 0.8267
+Test Accuracy: 0.7932
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 106ms/step - accuracy: 0.7562 - loss: 0.4742
+Test Loss: 0.4742
+Test Accuracy: 0.7562
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7903 - loss: 0.4339
+Test Loss: 0.4339
+Test Accuracy: 0.7903
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7733 - loss: 0.4609
+Test Loss: 0.4609
+Test Accuracy: 0.7733
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.8124 - loss: 0.4265
+Test Loss: 0.4265
+Test Accuracy: 0.8124
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7996 - loss: 0.4372
+Test Loss: 0.4372
+Test Accuracy: 0.7996
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 121ms/step - accuracy: 0.7825 - loss: 0.4491
+Test Loss: 0.4491
+Test Accuracy: 0.7825
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7989 - loss: 0.5161
+Test Loss: 0.5161
+Test Accuracy: 0.7989
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7726 - loss: 0.4674
+Test Loss: 0.4674
+Test Accuracy: 0.7726
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.8024 - loss: 0.4417
+Test Loss: 0.4417
+Test Accuracy: 0.8024
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 111ms/step - accuracy: 0.8060 - loss: 0.4278
+Test Loss: 0.4278
+Test Accuracy: 0.8060
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 108ms/step - accuracy: 0.7562 - loss: 0.4706
+Test Loss: 0.4706
+Test Accuracy: 0.7562
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 108ms/step - accuracy: 0.7946 - loss: 0.5582
+Test Loss: 0.5582
+Test Accuracy: 0.7946
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.7633 - loss: 0.4969
+Test Loss: 0.4969
+Test Accuracy: 0.7633
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.7854 - loss: 0.4473
+Test Loss: 0.4473
+Test Accuracy: 0.7854
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7918 - loss: 0.5591
+Test Loss: 0.5591
+Test Accuracy: 0.7918
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.7839 - loss: 0.4529
+Test Loss: 0.4529
+Test Accuracy: 0.7839
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 107ms/step - accuracy: 0.7875 - loss: 0.5841
+Test Loss: 0.5841
+Test Accuracy: 0.7875
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7555 - loss: 0.4973
+Test Loss: 0.4973
+Test Accuracy: 0.7555
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7882 - loss: 0.4371
+Test Loss: 0.4371
+Test Accuracy: 0.7882
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7982 - loss: 0.4585
+Test Loss: 0.4585
+Test Accuracy: 0.7982
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7946 - loss: 0.8449
+Test Loss: 0.8449
+Test Accuracy: 0.7946
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7839 - loss: 0.5043
+Test Loss: 0.5043
+Test Accuracy: 0.7839
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7918 - loss: 0.4247
+Test Loss: 0.4247
+Test Accuracy: 0.7918
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 110ms/step - accuracy: 0.7982 - loss: 0.4239
+Test Loss: 0.4239
+Test Accuracy: 0.7982
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 108ms/step - accuracy: 0.7925 - loss: 0.4278
+Test Loss: 0.4278
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7932 - loss: 0.4887
+Test Loss: 0.4887
+Test Accuracy: 0.7932
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7086 - loss: 0.5621
+Test Loss: 0.5621
+Test Accuracy: 0.7086
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 107ms/step - accuracy: 0.7903 - loss: 0.4201
+Test Loss: 0.4201
+Test Accuracy: 0.7903
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7946 - loss: 0.4345
+Test Loss: 0.4345
+Test Accuracy: 0.7946
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7584 - loss: 0.4426
+Test Loss: 0.4426
+Test Accuracy: 0.7584
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.8024 - loss: 0.4871
+Test Loss: 0.4871
+Test Accuracy: 0.8024
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.5821 - loss: 1.0827
+Test Loss: 1.0827
+Test Accuracy: 0.5821
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 124ms/step - accuracy: 0.7896 - loss: 0.4140
+Test Loss: 0.4140
+Test Accuracy: 0.7896
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 111ms/step - accuracy: 0.7932 - loss: 0.4132
+Test Loss: 0.4132
+Test Accuracy: 0.7932
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 118ms/step - accuracy: 0.7903 - loss: 0.4210
+Test Loss: 0.4210
+Test Accuracy: 0.7903
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7989 - loss: 0.4784
+Test Loss: 0.4784
+Test Accuracy: 0.7989
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7946 - loss: 0.4327
+Test Loss: 0.4327
+Test Accuracy: 0.7946
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7918 - loss: 0.4155
+Test Loss: 0.4155
+Test Accuracy: 0.7918
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7953 - loss: 0.4120
+Test Loss: 0.4120
+Test Accuracy: 0.7953
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 106ms/step - accuracy: 0.7875 - loss: 0.4533
+Test Loss: 0.4533
+Test Accuracy: 0.7875
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.7967 - loss: 0.4758
+Test Loss: 0.4758
+Test Accuracy: 0.7967
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 118ms/step - accuracy: 0.6674 - loss: 0.7276
+Test Loss: 0.7276
+Test Accuracy: 0.6674
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 100ms/step - accuracy: 0.7903 - loss: 0.4176
+Test Loss: 0.4176
+Test Accuracy: 0.7903
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 109ms/step - accuracy: 0.7861 - loss: 0.4483
+Test Loss: 0.4483
+Test Accuracy: 0.7861
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7889 - loss: 0.4328
+Test Loss: 0.4328
+Test Accuracy: 0.7889
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.6581 - loss: 0.7263
+Test Loss: 0.7263
+Test Accuracy: 0.6581
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7846 - loss: 0.4306
+Test Loss: 0.4306
+Test Accuracy: 0.7846
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7896 - loss: 0.4278
+Test Loss: 0.4278
+Test Accuracy: 0.7896
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.6333 - loss: 0.8289
+Test Loss: 0.8289
+Test Accuracy: 0.6333
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7825 - loss: 0.4419
+Test Loss: 0.4419
+Test Accuracy: 0.7825
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7370 - loss: 0.4912
+Test Loss: 0.4912
+Test Accuracy: 0.7370
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 107ms/step - accuracy: 0.7925 - loss: 0.5255
+Test Loss: 0.5255
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.8053 - loss: 0.4463
+Test Loss: 0.4463
+Test Accuracy: 0.8053
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.7783 - loss: 0.4589
+Test Loss: 0.4589
+Test Accuracy: 0.7783
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.8053 - loss: 0.4427
+Test Loss: 0.4427
+Test Accuracy: 0.8053
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 111ms/step - accuracy: 0.7022 - loss: 0.5994
+Test Loss: 0.5994
+Test Accuracy: 0.7022
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 125ms/step - accuracy: 0.7974 - loss: 0.5666
+Test Loss: 0.5666
+Test Accuracy: 0.7974
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 108ms/step - accuracy: 0.7960 - loss: 0.4776
+Test Loss: 0.4776
+Test Accuracy: 0.7960
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 105ms/step - accuracy: 0.7783 - loss: 0.4498
+Test Loss: 0.4498
+Test Accuracy: 0.7783
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 106ms/step - accuracy: 0.7925 - loss: 0.4353
+Test Loss: 0.4353
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 109ms/step - accuracy: 0.7150 - loss: 0.5613
+Test Loss: 0.5613
+Test Accuracy: 0.7150
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 118ms/step - accuracy: 0.7889 - loss: 0.5440
+Test Loss: 0.5440
+Test Accuracy: 0.7889
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 116ms/step - accuracy: 0.7932 - loss: 0.5655
+Test Loss: 0.5655
+Test Accuracy: 0.7932
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 119ms/step - accuracy: 0.7925 - loss: 0.4489
+Test Loss: 0.4489
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7996 - loss: 0.4398
+Test Loss: 0.4398
+Test Accuracy: 0.7996
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 108ms/step - accuracy: 0.6923 - loss: 0.6252
+Test Loss: 0.6252
+Test Accuracy: 0.6923
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7918 - loss: 0.5943
+Test Loss: 0.5943
+Test Accuracy: 0.7918
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 109ms/step - accuracy: 0.7932 - loss: 0.6556
+Test Loss: 0.6556
+Test Accuracy: 0.7932
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7982 - loss: 0.6204
+Test Loss: 0.6204
+Test Accuracy: 0.7982
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 110ms/step - accuracy: 0.7676 - loss: 0.4661
+Test Loss: 0.4661
+Test Accuracy: 0.7676
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.6766 - loss: 0.7070
+Test Loss: 0.7070
+Test Accuracy: 0.6766
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7925 - loss: 0.7400
+Test Loss: 0.7400
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7875 - loss: 0.6448
+Test Loss: 0.6448
+Test Accuracy: 0.7875
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 102ms/step - accuracy: 0.7967 - loss: 0.4484
+Test Loss: 0.4484
+Test Accuracy: 0.7967
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7626 - loss: 0.4770
+Test Loss: 0.4770
+Test Accuracy: 0.7626
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 106ms/step - accuracy: 0.7996 - loss: 0.4535
+Test Loss: 0.4535
+Test Accuracy: 0.7996
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7967 - loss: 0.4485
+Test Loss: 0.4485
+Test Accuracy: 0.7967
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 114ms/step - accuracy: 0.7925 - loss: 0.6373
+Test Loss: 0.6373
+Test Accuracy: 0.7925
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 104ms/step - accuracy: 0.7960 - loss: 0.4570
+Test Loss: 0.4570
+Test Accuracy: 0.7960
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 107ms/step - accuracy: 0.7683 - loss: 0.4721
+Test Loss: 0.4721
+Test Accuracy: 0.7683
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 106ms/step - accuracy: 0.7953 - loss: 0.4419
+Test Loss: 0.4419
+Test Accuracy: 0.7953
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 6
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 106ms/step - accuracy: 0.8024 - loss: 0.4755
+Test Loss: 0.4755
+Test Accuracy: 0.8024
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 3
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.8024 - loss: 0.4433
+Test Loss: 0.4433
+Test Accuracy: 0.8024
+
+
+ --------------- 
+
+
+Accuracy 80% or more
+randomSeeds['sklearn'] = 3
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 101ms/step - accuracy: 0.7797 - loss: 0.4433
+Test Loss: 0.4433
+Test Accuracy: 0.7797
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 3
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 103ms/step - accuracy: 0.7569 - loss: 0.4689
+Test Loss: 0.4689
+Test Accuracy: 0.7569
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 3
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 121ms/step - accuracy: 0.7996 - loss: 0.4352
+Test Loss: 0.4352
+Test Accuracy: 0.7996
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 3
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 6
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 118ms/step - accuracy: 0.7967 - loss: 0.4335
+Test Loss: 0.4335
+Test Accuracy: 0.7967
+
+
+ --------------- 
+
+
+randomSeeds['sklearn'] = 3
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 108ms/step - accuracy: 0.8017 - loss: 0.4255
+Test Loss: 0.4255
+Test Accuracy: 0.8017
+
+
+ --------------- 
