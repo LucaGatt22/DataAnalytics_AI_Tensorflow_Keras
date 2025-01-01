@@ -9,7 +9,7 @@ y = numpy_archive['y']
 Stage 2 – Creation of the MLP using Keras , and
 Stage 3 – Post Factum Data Analysis 
 
-# The following code is similar to that in the Jupyter notebook but makes Post Factum Analysis in a function and automates it for all the model structures, learning rates and random seeds
+# The following code is similar (many of it copied) to that in the Jupyter notebook but makes Post Factum Analysis in a function and automates it for all the model structures, learning rates and random seeds
 '''
 from os.path import exists as path_exists
 from os import makedirs
@@ -22,6 +22,106 @@ import numpy as np
 import os
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
+# imports for AI model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input, Dropout
+from tensorflow.random import set_seed as set_tensorflow_seed
+from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.optimizers import Adam
+from itertools import permutations
+
+# same Callback to store test loss and test accuracy after each epoch
+class TestSetEvaluatorCallback(Callback):
+    def __init__(self, X_test, y_test):
+        super(TestSetEvaluatorCallback, self).__init__()
+        self.X_test = X_test
+        self.y_test = y_test
+        self.test_loss_values = []  # To store test losses for each epoch
+        self.test_accuracy_values = []  # To store test accuracies for each epoch
+    
+    def on_epoch_end(self, epoch, logs=None):
+        # Evaluate on the test set at the end of each epoch
+        test_loss, test_accuracy = self.model.evaluate(X_test, y_test, verbose=0)
+        
+        # Store the test loss and test accuracy in the history dictionary
+        if 'test_loss' not in self.model.history.history:
+            self.model.history.history['test_loss'] = []
+        if 'test_accuracy' not in self.model.history.history:
+            self.model.history.history['test_accuracy'] = []
+        
+        # Append the current epoch's test loss and accuracy
+        self.test_loss_values.append(test_loss)
+        self.test_accuracy_values.append(test_accuracy)
+
+## same Model structures
+# Model with a single hidden layer using ReLU activation
+def modelStructure1HiddenReLULayer():
+    return Sequential([
+        Input(shape=(X_train.shape[1],)),  # Define the input shape
+        Dense(32, activation='relu'),  # Single hidden layer with ReLU activation
+        Dense(1, activation='sigmoid')  # Output layer for binary classification
+    ])
+
+# Model with a single hidden layer using ReLU activation and Dropout layer
+def modelStructure1HiddenReLULayerWithDropoutLayer():
+    return Sequential([
+        Input(shape=(X_train.shape[1],)),  # Define the input shape
+        Dense(32, activation='relu'),  # Single hidden layer with ReLU activation
+        Dropout(0.2),  # Dropout layer to prevent overfitting
+        Dense(1, activation='sigmoid')  # Output layer for binary classification
+    ])
+
+# Model with multiple hidden layers using ReLU activation
+def modelStructureMultipleHiddenReLULayer():
+    return Sequential([
+        Input(shape=(X_train.shape[1],)),  # Define the input shape
+        Dense(64, activation='relu'),  # First hidden layer with ReLU activation
+        Dense(32, activation='relu'),  # Second hidden layer with ReLU activation
+        Dense(16, activation='relu'),  # Third hidden layer with ReLU activation
+        Dense(4, activation='relu'),   # Fourth hidden layer with ReLU activation
+        Dense(1, activation='sigmoid')  # Output layer for binary classification
+    ])
+
+# Model with a single hidden layer using Tanh activation
+def modelStructure1HiddenTanhLayer():
+    return Sequential([
+        Input(shape=(X_train.shape[1],)),  # Define the input shape
+        Dense(32, activation='tanh'),  # Single hidden layer with tanh activation
+        Dense(1, activation='sigmoid')  # Output layer for binary classification
+    ])
+
+# same Wrapper function to call one of the models based on a string parameter
+def get_model_structure(model_type):
+    """
+    Returns a Keras model based on the specified model type.
+
+    :param model_type: str, the model type to create. Options are:
+        'single_hidden_relu', 'single_hidden_relu_dropout', 
+        'multiple_hidden_relu', 'single_hidden_tanh'
+    :return: Keras Sequential model
+    """
+    if model_type == modelStructure1HiddenReLULayer.__name__:
+        return modelStructure1HiddenReLULayer()
+    elif model_type == modelStructure1HiddenReLULayerWithDropoutLayer.__name__:
+        return modelStructure1HiddenReLULayerWithDropoutLayer()
+    elif model_type == modelStructureMultipleHiddenReLULayer.__name__:
+        return modelStructureMultipleHiddenReLULayer()
+    elif model_type == modelStructure1HiddenTanhLayer.__name__:
+        return modelStructure1HiddenTanhLayer()
+    else:
+        # Raise an error with valid options listed
+        valid_model_types = [
+            modelStructure1HiddenReLULayer.__name__,
+            modelStructure1HiddenReLULayerWithDropoutLayer.__name__,
+            modelStructureMultipleHiddenReLULayer.__name__,
+            modelStructure1HiddenTanhLayer.__name__
+        ]
+        raise ValueError(f"Invalid model type: {model_type}. Choose from {', '.join(valid_model_types)}.")
+
+
+# Helper functions end here (same as those in Jupyter notebook). Primary functions start here
+
+# New post_factum_analysis function with similar code inside it
 def post_factum_analysis(model_structure: str, learning_rate: float, history, test_set_evaluator, X_test, y_test):
     """
     Perform post-factum data analysis after training, and save the results to files.
