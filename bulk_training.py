@@ -1,3 +1,25 @@
+# Assuming numpy archive with X and y is saved already, this Python file is independent of the Jupyter notebook `DataAnalyticsAI_Tensorflow_Keras.ipynb`
+import os
+from os.path import exists as path_exists
+from os import makedirs
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+from sklearn.model_selection import train_test_split # to split the dataset into training (80%) and testing (20%) sets
+
+from random import seed as random_seed
+
+# imports for AI model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input, Dropout
+from tensorflow.random import set_seed as set_tensorflow_seed
+from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.optimizers import Adam
+from itertools import permutations
+
 # Load the data from the .npz (numpy archive) file
 numpy_archive = np.load("Xy.npz")
 
@@ -11,24 +33,12 @@ Stage 3 – Post Factum Data Analysis
 
 # The following code is similar (many of it copied) to that in the Jupyter notebook but makes Post Factum Analysis in a function and automates it for all the model structures, learning rates and random seeds
 '''
-from os.path import exists as path_exists
-from os import makedirs
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
 
-import matplotlib.pyplot as plt
-import numpy as np
-import os
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-
-# imports for AI model
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Input, Dropout
-from tensorflow.random import set_seed as set_tensorflow_seed
-from tensorflow.keras.callbacks import Callback
-from tensorflow.keras.optimizers import Adam
-from itertools import permutations
+# random seeds with sample values
+randomSeeds = dict()
+randomSeeds['sklearn'] = 20
+randomSeeds['tensorflow'] = 32
+randomSeeds['random'] = 42 # random seed of random module
 
 # same Callback to store test loss and test accuracy after each epoch
 class TestSetEvaluatorCallback(Callback):
@@ -41,7 +51,7 @@ class TestSetEvaluatorCallback(Callback):
     
     def on_epoch_end(self, epoch, logs=None):
         # Evaluate on the test set at the end of each epoch
-        test_loss, test_accuracy = self.model.evaluate(X_test, y_test, verbose=0)
+        test_loss, test_accuracy = self.model.evaluate(self.X_test, self.y_test, verbose=0)
         
         # Store the test loss and test accuracy in the history dictionary
         if 'test_loss' not in self.model.history.history:
@@ -55,7 +65,7 @@ class TestSetEvaluatorCallback(Callback):
 
 ## same Model structures
 # Model with a single hidden layer using ReLU activation
-def modelStructure1HiddenReLULayer():
+def modelStructure1HiddenReLULayer(X_train):
     return Sequential([
         Input(shape=(X_train.shape[1],)),  # Define the input shape
         Dense(32, activation='relu'),  # Single hidden layer with ReLU activation
@@ -63,7 +73,7 @@ def modelStructure1HiddenReLULayer():
     ])
 
 # Model with a single hidden layer using ReLU activation and Dropout layer
-def modelStructure1HiddenReLULayerWithDropoutLayer():
+def modelStructure1HiddenReLULayerWithDropoutLayer(X_train):
     return Sequential([
         Input(shape=(X_train.shape[1],)),  # Define the input shape
         Dense(32, activation='relu'),  # Single hidden layer with ReLU activation
@@ -72,7 +82,7 @@ def modelStructure1HiddenReLULayerWithDropoutLayer():
     ])
 
 # Model with multiple hidden layers using ReLU activation
-def modelStructureMultipleHiddenReLULayer():
+def modelStructureMultipleHiddenReLULayer(X_train):
     return Sequential([
         Input(shape=(X_train.shape[1],)),  # Define the input shape
         Dense(64, activation='relu'),  # First hidden layer with ReLU activation
@@ -83,7 +93,7 @@ def modelStructureMultipleHiddenReLULayer():
     ])
 
 # Model with a single hidden layer using Tanh activation
-def modelStructure1HiddenTanhLayer():
+def modelStructure1HiddenTanhLayer(X_train):
     return Sequential([
         Input(shape=(X_train.shape[1],)),  # Define the input shape
         Dense(32, activation='tanh'),  # Single hidden layer with tanh activation
@@ -91,7 +101,7 @@ def modelStructure1HiddenTanhLayer():
     ])
 
 # same Wrapper function to call one of the models based on a string parameter
-def get_model_structure(model_type):
+def get_model_structure(model_type, X_train):
     """
     Returns a Keras model based on the specified model type.
 
@@ -101,13 +111,13 @@ def get_model_structure(model_type):
     :return: Keras Sequential model
     """
     if model_type == modelStructure1HiddenReLULayer.__name__:
-        return modelStructure1HiddenReLULayer()
+        return modelStructure1HiddenReLULayer(X_train)
     elif model_type == modelStructure1HiddenReLULayerWithDropoutLayer.__name__:
-        return modelStructure1HiddenReLULayerWithDropoutLayer()
+        return modelStructure1HiddenReLULayerWithDropoutLayer(X_train)
     elif model_type == modelStructureMultipleHiddenReLULayer.__name__:
-        return modelStructureMultipleHiddenReLULayer()
+        return modelStructureMultipleHiddenReLULayer(X_train)
     elif model_type == modelStructure1HiddenTanhLayer.__name__:
-        return modelStructure1HiddenTanhLayer()
+        return modelStructure1HiddenTanhLayer(X_train)
     else:
         # Raise an error with valid options listed
         valid_model_types = [
@@ -122,7 +132,7 @@ def get_model_structure(model_type):
 # Helper functions end here (same as those in Jupyter notebook). Primary functions start here
 
 # New post_factum_analysis function with similar code inside it
-def post_factum_analysis(model_structure: str, learning_rate: float, history, test_set_evaluator, X_test, y_test):
+def post_factum_analysis(model_structure: str, learning_rate: float, history, test_set_evaluator, X_test, y_test, y_train, model):
     """
     Perform post-factum data analysis after training, and save the results to files.
     """
@@ -149,7 +159,7 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     plt.xlabel("Epoch")
     plt.ylabel("Bad Facts")
     plt.title("Bad Facts vs Epoch (Training Set)")
-    plt.xticks(range(1, len(bad_facts_per_epoch) + 1))
+    # plt.xticks(range(1, len(bad_facts_per_epoch) + 1))
     plt.legend()
     plt.grid(True)
 
@@ -197,7 +207,25 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     cm_disp.figure_.savefig(cm_filepath)
     plt.close()
 
-    # Print final results for comparison
+
+    # Final Results File - Saving to final-results folder
+    final_results_dir = "final-results"
+    if not os.path.exists(final_results_dir):
+        os.makedirs(final_results_dir)
+
+    # Define the file path for saving the final results
+    final_results_filepath = os.path.join(final_results_dir, f"{model_structure}_{learning_rate}_final_results.txt")
+
+    # Write the final results to the file
+    with open(final_results_filepath, "w") as f:
+        f.write(f"Model Structure: {model_structure}\n")
+        f.write(f"Learning Rate: {learning_rate}\n")
+        f.write(f"Final Training Loss: {train_loss[-1]:.4f}\n")
+        f.write(f"Final Training Accuracy: {train_accuracy[-1] * 100:.2f}%\n")
+        f.write(f"Final Test Loss: {test_loss[-1]:.4f}\n")
+        f.write(f"Final Test Accuracy: {test_accuracy[-1] * 100:.2f}%\n")
+
+    # Print final results for comparison (also to console)
     print(f"Final Training Loss: {train_loss[-1]:.4f}")
     print(f"Final Training Accuracy: {train_accuracy[-1] * 100:.2f}%")
     print(f"Final Test Loss: {test_loss[-1]:.4f}")
@@ -210,7 +238,7 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float):
     randomSeeds['tensorflow'] = randomSeedsTuple[2]
 
     # Open the file for writing
-    with open(f"output/{model_structure}_{learning_rate}.txt", "a") as f:
+    with open(f"modelStructures_learningRates/output/{model_structure}_{learning_rate}.txt", "a") as f:
         f.write(f"randomSeeds['sklearn'] = {randomSeeds['sklearn']}\n")
         f.write(f"randomSeeds['random'] = {randomSeeds['random']}\n")
         f.write(f"randomSeeds['tensorflow'] = {randomSeeds['tensorflow']}\n")
@@ -223,7 +251,7 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float):
         set_tensorflow_seed(randomSeeds['tensorflow'])
 
         # Build a simple MLP model (you can replace this with any of your model functions)
-        model = get_model_structure(model_structure)
+        model = get_model_structure(model_structure, X_train)
 
         # Compile the model directly here with the learning rate parameter
         model.compile(
@@ -245,7 +273,7 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float):
         f.write("\nTest the model\n")
 
         # Evaluate the model on the test set
-        test_loss, test_accuracy = model.evaluate(X_test, y_test, batch_size=totalNumRows - numRowsDropped)
+        test_loss, test_accuracy = model.evaluate(X_test, y_test, batch_size=7032) # totalNumRows - numRowsDropped = 7032
 
         # Write the test results to the file
         f.write(f"Test Loss: {test_loss:.4f}\n")
@@ -263,7 +291,7 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float):
         f.write('\n' + '-' * 15 + '\n\n')  # Spacing between function calls
 
         # Call post_factum_analysis for the saved graphs and confusion matrix
-        post_factum_analysis(model_structure, learning_rate, history, test_set_evaluator, X_test, y_test)
+        post_factum_analysis(model_structure, learning_rate, history, test_set_evaluator, X_test, y_test, y_train, model)
 
     return test_accuracy
 
@@ -296,10 +324,10 @@ tuples_model_structures_learning_rates = [
 # Driver code
 for model_structure, learning_rate in tuples_model_structures_learning_rates:
     print('model_structure =', model_structure, ', learning_rate =', learning_rate)
-    with open(f"output/{model_structure}_{learning_rate}.txt", "w") as f: # clear file
+    with open(f"modelStructures_learningRates/output/{model_structure}_{learning_rate}.txt", "w") as f: # clear file
         f.write("")
-
+    
     for seeds in permutations(range(3), len(randomSeeds)):
         test_accuracy = bulkTraining(seeds, model_structure=model_structure, learning_rate=learning_rate)
-        if test_accuracy == 1:
-            break
+        # if test_accuracy == 1: break
+        break # not running with different random seeds anymore as I have results `output-model-different-random-seeds` folder. The output in that folder comes from the Jupyter notebook.

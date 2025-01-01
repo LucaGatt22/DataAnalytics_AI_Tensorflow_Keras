@@ -1,0 +1,225 @@
+model_structure = modelStructure1HiddenReLULayer , learning_rate = 0.001
+2025-01-01 21:03:03.199238: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7982 - loss: 0.4289
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.4161
+Final Training Accuracy: 80.21%
+Final Test Loss: 0.4289
+Final Test Accuracy: 79.82%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7719 - loss: 0.4819
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5465
+Final Training Accuracy: 78.20%
+Final Test Loss: 0.4819
+Final Test Accuracy: 77.19%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7918 - loss: 0.4243
+WARNING:tensorflow:5 out of the last 7 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x77ad251a7e20> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+1/3 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/stepWARNING:tensorflow:6 out of the last 9 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x77ad251a7e20> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.4412
+Final Training Accuracy: 79.24%
+Final Test Loss: 0.4243
+Final Test Accuracy: 79.18%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7903 - loss: 0.4201
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.4617
+Final Training Accuracy: 78.60%
+Final Test Loss: 0.4201
+Final Test Accuracy: 79.03%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.8053 - loss: 0.4462
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step
+Final Training Loss: 0.4309
+Final Training Accuracy: 80.20%
+Final Test Loss: 0.4462
+Final Test Accuracy: 80.53%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7974 - loss: 0.4774
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.4531
+Final Training Accuracy: 79.22%
+Final Test Loss: 0.4774
+Final Test Accuracy: 79.74%
+model_structure = modelStructure1HiddenReLULayer , learning_rate = 0.01
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 33ms/step - accuracy: 0.8088 - loss: 0.4204
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.4050
+Final Training Accuracy: 80.66%
+Final Test Loss: 0.4204
+Final Test Accuracy: 80.88%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.8031 - loss: 0.4344
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step
+Final Training Loss: 0.4015
+Final Training Accuracy: 80.92%
+Final Test Loss: 0.4344
+Final Test Accuracy: 80.31%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7882 - loss: 0.4142
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.4128
+Final Training Accuracy: 80.12%
+Final Test Loss: 0.4142
+Final Test Accuracy: 78.82%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 46ms/step - accuracy: 0.7925 - loss: 0.4109
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.4038
+Final Training Accuracy: 81.01%
+Final Test Loss: 0.4109
+Final Test Accuracy: 79.25%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7996 - loss: 0.4239
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step
+Final Training Loss: 0.4099
+Final Training Accuracy: 80.68%
+Final Test Loss: 0.4239
+Final Test Accuracy: 79.96%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 36ms/step - accuracy: 0.7996 - loss: 0.4345
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step
+Final Training Loss: 0.4019
+Final Training Accuracy: 80.78%
+Final Test Loss: 0.4345
+Final Test Accuracy: 79.96%
+model_structure = modelStructure1HiddenReLULayer , learning_rate = 0.2
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7377 - loss: 0.5755
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5808
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5755
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7377 - loss: 0.5759
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5810
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5759
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7399 - loss: 0.5734
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5809
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5734
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 32ms/step - accuracy: 0.7399 - loss: 0.5732
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5808
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5732
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5793
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 34ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5798
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
+model_structure = modelStructure1HiddenReLULayerWithDropoutLayer , learning_rate = 0.2
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7377 - loss: 0.5755
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5808
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5755
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7377 - loss: 0.5759
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5810
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5759
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - accuracy: 0.7399 - loss: 0.5734
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5809
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5734
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7399 - loss: 0.5732
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5808
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5732
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5793
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5798
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
+model_structure = modelStructureMultipleHiddenReLULayer , learning_rate = 0.2
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7377 - loss: 0.5755
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step
+Final Training Loss: 0.5808
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5755
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7377 - loss: 0.5759
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step
+Final Training Loss: 0.5810
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5759
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7399 - loss: 0.5734
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step
+Final Training Loss: 0.5809
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5734
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7399 - loss: 0.5732
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 33ms/step
+Final Training Loss: 0.5808
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5732
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step
+Final Training Loss: 0.5793
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step
+Final Training Loss: 0.5798
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
+model_structure = modelStructure1HiddenTanhLayer , learning_rate = 0.2
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.7377 - loss: 0.5789
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step
+Final Training Loss: 0.5903
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5789
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 32ms/step - accuracy: 0.7377 - loss: 0.5782
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step
+Final Training Loss: 0.5918
+Final Training Accuracy: 73.33%
+Final Test Loss: 0.5782
+Final Test Accuracy: 73.77%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7399 - loss: 0.5747
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5940
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5747
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 47ms/step - accuracy: 0.7399 - loss: 0.5750
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+Final Training Loss: 0.5952
+Final Training Accuracy: 73.28%
+Final Test Loss: 0.5750
+Final Test Accuracy: 73.99%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 36ms/step - accuracy: 0.7342 - loss: 0.6006
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+Final Training Loss: 0.6293
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.6006
+Final Test Accuracy: 73.42%
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - accuracy: 0.7342 - loss: 0.5791
+3/3 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step
+Final Training Loss: 0.5931
+Final Training Accuracy: 73.42%
+Final Test Loss: 0.5791
+Final Test Accuracy: 73.42%
