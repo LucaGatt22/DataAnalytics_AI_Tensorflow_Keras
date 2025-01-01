@@ -1,0 +1,67 @@
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4289
+Test Accuracy: 0.7982
+
+---------------
+
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4819
+Test Accuracy: 0.7719
+
+---------------
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4243
+Test Accuracy: 0.7918
+
+---------------
+
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4201
+Test Accuracy: 0.7903
+
+---------------
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4462
+Test Accuracy: 0.8053
+Accuracy 80% or more
+
+---------------
+
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4774
+Test Accuracy: 0.7974
+
+---------------
+
