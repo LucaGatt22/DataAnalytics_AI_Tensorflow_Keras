@@ -132,18 +132,14 @@ def get_model_structure(model_type, X_train):
 # Helper functions end here (same as those in Jupyter notebook). Primary functions start here
 
 # New post_factum_analysis function with similar code inside it
-def post_factum_analysis(model_structure: str, learning_rate: float, history, test_set_evaluator, X_test, y_test, y_train, model):
+def post_factum_analysis(model_structure: str, learning_rate: float, history, test_set_evaluator, X_test, y_test, y_train, model, filepath: str):
     """
     Perform post-factum data analysis after training, and save the results to files.
     """
-    # Ensure the graph directory exists
-    graph_dir = "graphs"
-    if not os.path.exists(graph_dir):
-        os.makedirs(graph_dir)
 
     # File paths for saving graphs and confusion matrix
-    graph_filepath = os.path.join(graph_dir, f"{model_structure}_{learning_rate}_analysis.png")
-    cm_filepath = os.path.join(graph_dir, f"{model_structure}_{learning_rate}_confusion_matrix.png")
+    graph_filepath = f"{filepath}_analysis.png"
+    cm_filepath = f"{filepath}_confusion_matrix.png"
 
     # Stage 3 – Post Factum Data Analysis: Plot Bad Facts vs Epoch
     train_accuracy = np.array(history.history['accuracy'])
@@ -210,16 +206,19 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
 
     # Final Results File - Saving to final-results folder
     final_results_dir = "final-results"
-    if not os.path.exists(final_results_dir):
-        os.makedirs(final_results_dir)
+    final_results_filepath = filepath.split('graphs')[0] + final_results_dir + filepath.split('graphs')[1] # incomplete path
 
     # Define the file path for saving the final results
-    final_results_filepath = os.path.join(final_results_dir, f"{model_structure}_{learning_rate}_final_results.txt")
+    final_results_filepath = f"{final_results_filepath}_final_results.txt" # path till text file
 
     # Write the final results to the file
     with open(final_results_filepath, "w") as f:
         f.write(f"Model Structure: {model_structure}\n")
         f.write(f"Learning Rate: {learning_rate}\n")
+        f.write(f"Random seed - sklearn: {randomSeeds['sklearn']}\n")
+        f.write(f"Random seed - random: {randomSeeds['random']}\n")
+        f.write(f"Random seed - tensorflow: {randomSeeds['tensorflow']}\n")
+
         f.write(f"Final Training Loss: {train_loss[-1]:.4f}\n")
         f.write(f"Final Training Accuracy: {train_accuracy[-1] * 100:.2f}%\n")
         f.write(f"Final Test Loss: {test_loss[-1]:.4f}\n")
@@ -231,14 +230,17 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     print(f"Final Test Loss: {test_loss[-1]:.4f}")
     print(f"Final Test Accuracy: {test_accuracy[-1] * 100:.2f}%")
 
-def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float):
+def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float, filepath: str):
     # Set randomSeeds dictionary
     randomSeeds['sklearn'] = randomSeedsTuple[0]
     randomSeeds['random'] = randomSeedsTuple[1]
     randomSeeds['tensorflow'] = randomSeedsTuple[2]
 
     # Open the file for writing
-    with open(f"modelStructures_learningRates/output/{model_structure}_{learning_rate}.txt", "a") as f:
+    with open(f"{filepath}.txt", "a") as f:
+        f.write(f'model_structure = {model_structure}\n')
+        f.write(f'learning_rate = {learning_rate}\n')
+
         f.write(f"randomSeeds['sklearn'] = {randomSeeds['sklearn']}\n")
         f.write(f"randomSeeds['random'] = {randomSeeds['random']}\n")
         f.write(f"randomSeeds['tensorflow'] = {randomSeeds['tensorflow']}\n")
@@ -290,8 +292,10 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float):
         # Add spacing and separator for clarity
         f.write('\n' + '-' * 15 + '\n\n')  # Spacing between function calls
 
+
+        filepath = filepath.split('output')[0] + 'graphs' + filepath.split('output')[1]
         # Call post_factum_analysis for the saved graphs and confusion matrix
-        post_factum_analysis(model_structure, learning_rate, history, test_set_evaluator, X_test, y_test, y_train, model)
+        post_factum_analysis(model_structure, learning_rate, history, test_set_evaluator, X_test, y_test, y_train, model, filepath=filepath)
 
     return test_accuracy
 
@@ -321,13 +325,27 @@ tuples_model_structures_learning_rates = [
     ("modelStructure1HiddenTanhLayer", 0.2)
 ]
 
+# Ensure the required directories/folders exist
+foldersRequired = []
+for subfolder in ['', 'output', 'graphs', 'final-results']:
+    foldersRequired.append('modelStructures_learningRates/' + subfolder)
+    foldersRequired.append('randomSeeds/' + subfolder)
+for folderRequired in foldersRequired:
+    if not path_exists(folderRequired): makedirs(folderRequired)
+
+
 # Driver code
+# Run with different model_structures and learning_rates
 for model_structure, learning_rate in tuples_model_structures_learning_rates:
     print('model_structure =', model_structure, ', learning_rate =', learning_rate)
-    with open(f"modelStructures_learningRates/output/{model_structure}_{learning_rate}.txt", "w") as f: # clear file
-        f.write("")
-    
-    for seeds in permutations(range(3), len(randomSeeds)):
-        test_accuracy = bulkTraining(seeds, model_structure=model_structure, learning_rate=learning_rate)
-        # if test_accuracy == 1: break
-        break # not running with different random seeds anymore as I have results `output-model-different-random-seeds` folder. The output in that folder comes from the Jupyter notebook.
+    filepath = f"modelStructures_learningRates/output/{model_structure}_{learning_rate}" # .txt
+    with open(filepath + '.txt', 'w') as file:
+        file.write('')
+    test_accuracy = bulkTraining(randomSeedsTuple=(0,1,2), model_structure=model_structure, learning_rate=learning_rate, filepath=filepath)
+    if test_accuracy == 1: break
+
+# Run with different random seeds
+for seeds in permutations(range(3), len(randomSeeds)):
+    filepath = f"randomSeeds/output/sk{seeds[0]}_random{seeds[1]}_tf{seeds[2]}" # .txt
+    test_accuracy = bulkTraining(seeds, model_structure=model_structures[0], learning_rate=learning_rates[0], filepath=filepath)
+    if test_accuracy == 1: break

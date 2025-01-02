@@ -1,0 +1,9 @@
+Model Structure: modelStructure1HiddenReLULayer
+Learning Rate: 0.001
+Random seed - sklearn: 1
+Random seed - random: 0
+Random seed - tensorflow: 2
+Final Training Loss: 0.4412
+Final Training Accuracy: 79.24%
+Final Test Loss: 0.4243
+Final Test Accuracy: 79.18%

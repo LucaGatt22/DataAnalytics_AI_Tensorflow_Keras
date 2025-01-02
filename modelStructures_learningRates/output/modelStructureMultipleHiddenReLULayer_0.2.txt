@@ -1,0 +1,13 @@
+model_structure = modelStructureMultipleHiddenReLULayer
+learning_rate = 0.2
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.5755
+Test Accuracy: 0.7377
+
+---------------
+
