@@ -1,0 +1,827 @@
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4289
+Test Accuracy: 0.7989
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4529
+Test Accuracy: 0.7839
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4713
+Test Accuracy: 0.7925
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4247
+Test Accuracy: 0.7918
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4314
+Test Accuracy: 0.8024
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4239
+Test Accuracy: 0.7982
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4376
+Test Accuracy: 0.7903
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4278
+Test Accuracy: 0.7925
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4410
+Test Accuracy: 0.7982
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4887
+Test Accuracy: 0.7932
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.5765
+Test Accuracy: 0.7946
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4201
+Test Accuracy: 0.7903
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.8267
+Test Accuracy: 0.7932
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4345
+Test Accuracy: 0.7946
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4742
+Test Accuracy: 0.7562
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4426
+Test Accuracy: 0.7584
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4609
+Test Accuracy: 0.7733
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4871
+Test Accuracy: 0.8024
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4265
+Test Accuracy: 0.8124
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4140
+Test Accuracy: 0.7896
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4372
+Test Accuracy: 0.7996
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4132
+Test Accuracy: 0.7932
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4491
+Test Accuracy: 0.7825
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4210
+Test Accuracy: 0.7903
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4674
+Test Accuracy: 0.7726
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4784
+Test Accuracy: 0.7989
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4417
+Test Accuracy: 0.8024
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4155
+Test Accuracy: 0.7918
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4278
+Test Accuracy: 0.8060
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4120
+Test Accuracy: 0.7953
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4706
+Test Accuracy: 0.7562
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4533
+Test Accuracy: 0.7875
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4969
+Test Accuracy: 0.7633
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4473
+Test Accuracy: 0.7854
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 4
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4758
+Test Accuracy: 0.7967
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.5591
+Test Accuracy: 0.7918
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4176
+Test Accuracy: 0.7903
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 0
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4529
+Test Accuracy: 0.7839
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4483
+Test Accuracy: 0.7861
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4247
+Test Accuracy: 0.7918
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4328
+Test Accuracy: 0.7889
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4239
+Test Accuracy: 0.7982
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 5
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.7263
+Test Accuracy: 0.6581
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4278
+Test Accuracy: 0.7925
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4463
+Test Accuracy: 0.8053
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4887
+Test Accuracy: 0.7932
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4589
+Test Accuracy: 0.7783
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4201
+Test Accuracy: 0.7903
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4427
+Test Accuracy: 0.8053
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4345
+Test Accuracy: 0.7946
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 0
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.5994
+Test Accuracy: 0.7022
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4426
+Test Accuracy: 0.7584
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4776
+Test Accuracy: 0.7960
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 2
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4871
+Test Accuracy: 0.8024
+Accuracy 80% or more
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 3
+Train the model
+
+Test the model
+Test Loss: 0.4498
+Test Accuracy: 0.7783
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4140
+Test Accuracy: 0.7896
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4353
+Test Accuracy: 0.7925
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 2
+Train the model
+
+Test the model
+Test Loss: 0.4132
+Test Accuracy: 0.7932
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.5613
+Test Accuracy: 0.7150
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 4
+Train the model
+
+Test the model
+Test Loss: 0.4210
+Test Accuracy: 0.7903
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.5655
+Test Accuracy: 0.7932
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 1
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 5
+Train the model
+
+Test the model
+Test Loss: 0.4784
+Test Accuracy: 0.7989
+
+---------------
+
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 3
+randomSeeds['tensorflow'] = 1
+Train the model
+
+Test the model
+Test Loss: 0.4489
+Test Accuracy: 0.7925
+
+---------------
+

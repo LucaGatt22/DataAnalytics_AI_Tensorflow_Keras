@@ -7,7 +7,7 @@ Train the model
 
 Test the model
 Test Loss: 0.4289
-Test Accuracy: 0.7982
+Test Accuracy: 0.7989
 
 ---------------
 

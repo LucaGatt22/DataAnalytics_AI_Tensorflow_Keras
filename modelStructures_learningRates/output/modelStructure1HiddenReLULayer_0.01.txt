@@ -6,8 +6,8 @@ randomSeeds['tensorflow'] = 2
 Train the model
 
 Test the model
-Test Loss: 0.4204
-Test Accuracy: 0.8088
+Test Loss: 0.4206
+Test Accuracy: 0.8060
 Accuracy 80% or more
 
 ---------------

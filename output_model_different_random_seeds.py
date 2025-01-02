@@ -5,7 +5,7 @@ import re
 # modelCharacteristic = '1-hidden-ReLU-layer'
 
 text = None
-with open(f'randomSeeds/output-random-seeds-0to2.txt', 'r') as file:
+with open(f'randomSeeds/output-random-seeds.txt', 'r') as file:
     text = file.read()
 if not text: raise Exception('Variable text not populated. Maybe file is open - If yes, close it.')
 
@@ -31,9 +31,10 @@ for match in matches:
 
 # Create a pandas DataFrame from the collected data
 df = pd.DataFrame(data)
-
-# Display the DataFrame
 print(df)
+
+# Find the largest seed across all rows and columns - for xticks() - range and step
+largest_seed = df[['sklearn_seed', 'random_seed', 'tensorflow_seed']].max().max()
 
 # Visualisations of test accuracies and losses over runs
 
@@ -41,7 +42,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 
 # Create a PdfPages object to save multiple plots in one PDF
-with PdfPages(f'randomSeeds/graphs-random-seeds-0to2_model_visualizations_based_on_output.pdf') as pdf:
+with PdfPages(f'randomSeeds/graphs-random-seeds_model_visualizations_based_on_output.pdf') as pdf:
 
     # Test Accuracy vs Run Number
     plt.figure(figsize=(10, 6))
@@ -141,4 +142,10 @@ print('\ntop_5_accuracy', top_5_accuracy, sep='\n')
 top_5_loss = df.nsmallest(5, 'loss')
 print('\ntop_5_loss', top_5_loss, sep='\n')
 
-print('\nSelected row (the one having the lowest loss from the Top 5 Accuracy): ', top_5_accuracy.nsmallest(1, 'loss'), sep='\n')
+selected_row = top_5_accuracy.nsmallest(1, 'loss')
+print('\nSelected row (the one having the lowest loss from the Top 5 Accuracy): ', selected_row, sep='\n')
+
+# Write the string to a file
+with open('selected_row.txt', 'w') as file:
+    file.write("Selected row (the one having the lowest loss from the Top 5 Accuracy):\n")
+    file.write(selected_row.to_string())
