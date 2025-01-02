@@ -237,7 +237,9 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float, f
     randomSeeds['tensorflow'] = randomSeedsTuple[2]
 
     # Open the file for writing
-    with open(f"{filepath}.txt", "a") as f:
+    filepathOutput = filepath
+    if 'randomSeeds' in filepathOutput: filepathOutput = 'randomSeeds/output-random-seeds-0to2' # .txt
+    with open(f"{filepathOutput}.txt", "a") as f:
         f.write(f'model_structure = {model_structure}\n')
         f.write(f'learning_rate = {learning_rate}\n')
 
@@ -345,7 +347,11 @@ for model_structure, learning_rate in tuples_model_structures_learning_rates:
     if test_accuracy == 1: break
 
 # Run with different random seeds
+with open('randomSeeds/output-random-seeds-0to2.txt', 'w') as file:  file.write('') # list results of each set of random seeds in the same file for `output_model_different_random_seeds.py`
 for seeds in permutations(range(3), len(randomSeeds)):
     filepath = f"randomSeeds/output/sk{seeds[0]}_random{seeds[1]}_tf{seeds[2]}" # .txt
     test_accuracy = bulkTraining(seeds, model_structure=model_structures[0], learning_rate=learning_rates[0], filepath=filepath)
     if test_accuracy == 1: break
+
+# Generate graphs that give overview of performance of all runs of different random seeds
+import output_model_different_random_seeds # it has code outside i.e. executed upon import, so important to import it in last line

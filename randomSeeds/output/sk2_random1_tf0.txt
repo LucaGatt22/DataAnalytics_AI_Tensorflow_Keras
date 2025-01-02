@@ -11,3 +11,16 @@ Test Accuracy: 0.7974
 
 ---------------
 
+model_structure = modelStructure1HiddenReLULayer
+learning_rate = 0.001
+randomSeeds['sklearn'] = 2
+randomSeeds['random'] = 1
+randomSeeds['tensorflow'] = 0
+Train the model
+
+Test the model
+Test Loss: 0.4774
+Test Accuracy: 0.7974
+
+---------------
+
