@@ -14,7 +14,7 @@ from random import seed as random_seed
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Input, Dropout
 from tensorflow.random import set_seed as set_tensorflow_seed
-from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.callbacks import Callback, EarlyStopping
 from tensorflow.keras.optimizers import Adam
 from itertools import permutations
 
@@ -138,6 +138,7 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     # File paths for saving graphs and confusion matrix
     graph_filepath = f"{filepath}_analysis.png"
     cm_filepath = f"{filepath}_confusion_matrix.png"
+    suffixTitleToShowRun:str = filepath.split('/')[-1]
 
     # Stage 3 – Post Factum Data Analysis: Plot Bad Facts vs Epoch
     train_accuracy = np.array(history.history['accuracy'])
@@ -152,7 +153,7 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     plt.plot(range(1, len(bad_facts_per_epoch) + 1), bad_facts_per_epoch, color='red', label="Bad Facts")
     plt.xlabel("Epoch")
     plt.ylabel("Bad Facts")
-    plt.title("Bad Facts vs Epoch (Training Set)")
+    plt.title("Bad Facts vs Epoch (Training Set) " + suffixTitleToShowRun)
     # plt.xticks(range(1, len(bad_facts_per_epoch) + 1))
     plt.legend()
     plt.grid(True)
@@ -168,7 +169,7 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     plt.subplot(3, 1, 2)
     plt.plot(epochs, train_loss, label='Training Loss')
     plt.plot(epochs, test_loss, label='Test Loss')
-    plt.title('Loss vs Epoch')
+    plt.title('Loss vs Epoch ' + suffixTitleToShowRun)
     plt.xlabel('Epochs')
     plt.ylabel('Loss')
     plt.legend()
@@ -177,7 +178,7 @@ def post_factum_analysis(model_structure: str, learning_rate: float, history, te
     plt.subplot(3, 1, 3)
     plt.plot(epochs, train_accuracy, label='Training Accuracy')
     plt.plot(epochs, test_accuracy, label='Test Accuracy')
-    plt.title('Accuracy vs Epoch')
+    plt.title('Accuracy vs Epoch ' + suffixTitleToShowRun)
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
     plt.legend()
@@ -268,8 +269,17 @@ def bulkTraining(randomSeedsTuple, model_structure: str, learning_rate: float, f
         # Initialise the TestSetEvaluator callback
         test_set_evaluator = TestSetEvaluatorCallback(X_test, y_test)
 
+        # Set up EarlyStopping callback to monitor training loss
+        early_stopping = EarlyStopping(
+            monitor='loss',  # Monitor training loss
+            patience=20,     # Patience, wait for 20 epochs without improvement
+            restore_best_weights=True,  # Restore the best weights at the end
+            verbose=1         # To see early stopping logs
+        )
+
         # Train the model (with silent output)
-        history = model.fit(X_train, y_train, epochs=1000, batch_size=500, shuffle=True, verbose=0, callbacks=[test_set_evaluator])
+        history = model.fit(X_train, y_train, epochs=1000, batch_size=500, shuffle=True, verbose=0, 
+                            callbacks=[test_set_evaluator, early_stopping])
 
         # Test the model
         f.write("\nTest the model\n")
