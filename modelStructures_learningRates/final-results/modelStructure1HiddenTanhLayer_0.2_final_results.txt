@@ -3,7 +3,7 @@ Learning Rate: 0.2
 Random seed - sklearn: 0
 Random seed - random: 1
 Random seed - tensorflow: 2
-Final Training Loss: 0.5903
+Final Training Loss: 0.5901
 Final Training Accuracy: 73.33%
-Final Test Loss: 0.5789
+Final Test Loss: 0.5794
 Final Test Accuracy: 73.77%

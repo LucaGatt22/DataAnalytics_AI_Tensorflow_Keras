@@ -6,7 +6,7 @@ randomSeeds['tensorflow'] = 2
 Train the model
 
 Test the model
-Test Loss: 0.5755
+Test Loss: 0.5754
 Test Accuracy: 0.7377
 
 ---------------
